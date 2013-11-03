@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#BBCCCCCC"
+        android:paddingLeft="50dp"
+        android:text="Poniedziałek"
+        android:textSize="20sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/timeStart"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/title"
+        android:background="#FFAADDCC"
+        android:paddingBottom="4dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="4dp"
+        android:text="08:00"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/timeEnd"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/timeStart"
+        android:background="#FFAADDCC"
+        android:paddingBottom="4dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="4dp"
+        android:text="09:15"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/lecture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/timeStart"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@+id/timeStart"
+        android:text="Język polski"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/teacher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lecture"
+        android:layout_alignTop="@+id/timeEnd"
+        android:text="Małgorzata Zalączkowska"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/cab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/lecture"
+        android:layout_alignParentRight="true"
+        android:text="210"
+        android:textSize="14sp" />
+
+</RelativeLayout>

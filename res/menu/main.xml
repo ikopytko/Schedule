@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menuMore"
+        android:icon="@drawable/abs__ic_menu_moreoverflow_holo_light"
+        android:orderInCategory="1"
+        android:showAsAction="ifRoom"
+        android:title="More">
+        <menu>
+            <item
+                android:id="@+id/menuUpd"
+                android:icon="@drawable/abs__ic_search_api_holo_light"
+                android:title="Update"/>
+            <item
+                android:id="@+id/menuExit"
+                android:icon="@drawable/abs__ic_clear_holo_light"
+                android:title="Exit"/>
+        </menu>
+    </item>
+
+</menu>
