@@ -13,9 +13,9 @@ import android.widget.TextView;
 
 public class DayAdapter extends BaseAdapter {
 	LayoutInflater lInflater;
-	ArrayList<Day> objects;
+	DayArray objects;
 
-	DayAdapter(Context context, ArrayList<Day> products) {
+	DayAdapter(Context context, DayArray products) {
 		objects = products;
 		lInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	}
@@ -24,7 +24,7 @@ public class DayAdapter extends BaseAdapter {
 	@Override
 	public int getCount() {
 		int size = 0;
-		for (Day day : objects) {
+		for (Day day : objects.list_of_days) {
 			size += day.list_of_lectures.size();
 		}
 		Log.i("Adapter", "size " + size);
@@ -35,14 +35,14 @@ public class DayAdapter extends BaseAdapter {
 	@Override
 	public Object getItem(int position) {
 		int localPos = 0;
-		for (Day day : objects) {
+		for (Day day : objects.list_of_days) {
 			if ((position-localPos) < day.list_of_lectures.size())
 				return day;
 			
 			localPos += day.list_of_lectures.size();
 		}
 		// in case of bad position return first day 
-		return objects.get(0);
+		return objects.list_of_days.get(0);
 	}
 
 	// id by position
@@ -86,7 +86,7 @@ public class DayAdapter extends BaseAdapter {
 	
 	boolean is_lecture_first_in_day(int position) {
 		int localPos = 0;
-		for (Day day : objects) {
+		for (Day day : objects.list_of_days) {
 			if (localPos == position)
 				return true;
 			localPos += day.list_of_lectures.size();
@@ -102,7 +102,7 @@ public class DayAdapter extends BaseAdapter {
 	// lecture by position
 	Lecture getLecture(int position) {
 		int localPos = 0;
-		for (Day day : objects) {
+		for (Day day : objects.list_of_days) {
 			for (Lecture lecture : day.list_of_lectures) {
 				if (localPos == position)
 					return lecture;
@@ -111,6 +111,6 @@ public class DayAdapter extends BaseAdapter {
 		}
 		Log.i("Adapter", "getLecture Error " + position);
 		// in case of bad position return first lecture
-		return objects.get(0).list_of_lectures.get(0);
+		return objects.list_of_days.get(0).list_of_lectures.get(0);
 	}
 }

@@ -36,7 +36,7 @@ import com.google.gson.reflect.TypeToken;
 public class ActivityMain extends SherlockActivity {
 	private final String JSONFILE = "plan.json";
 	private final Type collectionType = new TypeToken<ArrayList<Day>>(){}.getType();
-	private ArrayList<Day> ints;
+	private DayArray ints;
 	private DayAdapter dayAdapter;
 	private ListView mainList;
 	Gson gson;
@@ -52,7 +52,7 @@ public class ActivityMain extends SherlockActivity {
 		ll = (LinearLayout) findViewById(R.id.ll);
 		
 		gson = new Gson();
-		ints = gson.fromJson(getJsonString(), collectionType);
+		ints = gson.fromJson(getJsonString(), DayArray.class);
 		
 		dayAdapter = new DayAdapter(this, ints);
 		mainList.setAdapter(dayAdapter);
